@@ -8,4 +8,6 @@ urlpatterns = [
     url(r'^lembretes/guarda-lembrete', views.guarda_lembrete, name='guarda_lembrete'),
     url(r'^lembretes/$', views.lembretes, name='lembretes'),
     url(r'^lembretes/(?P<username>[\w-]+)/$', views.lembretes, name='lembretes'),
+    url(r'^somatorio/$', views.somatorio, name='somatorio'),
+
 ]
