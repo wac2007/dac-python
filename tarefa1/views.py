@@ -64,17 +64,23 @@ def somatorio(request):
     resp = render(request, 'tarefa1/somatorio.html', {'inicio':inicio, "fim":fim, "somatorio":somatorio, "contsessao":cont1})    
 
     #Contagem por Cookie'''
+    contcookie = 1
     if request.COOKIES.get('contcookie'):
         contcookie = int(request.COOKIES.get('contcookie'))
         contcookie+=1
+        if cont1 > contcookie:
+            resp = render(request, 'tarefa1/somatorio.html', {'inicio':inicio, "fim":fim, "somatorio":somatorio, "contsessao":cont1, "contserver":cont1})    
+        else:
+            resp = render(request, 'tarefa1/somatorio.html', {'inicio':inicio, "fim":fim, "somatorio":somatorio, "contsessao":cont1, "contserver":contcookie})
         resp.set_cookie('contcookie', contcookie)
 
+
     else:
+        if cont1 > contcookie:
+            resp = render(request, 'tarefa1/somatorio.html', {'inicio':inicio, "fim":fim, "somatorio":somatorio, "contsessao":cont1, "contserver":cont1})    
+        else:
+            resp = render(request, 'tarefa1/somatorio.html', {'inicio':inicio, "fim":fim, "somatorio":somatorio, "contsessao":cont1, "contserver":contcookie})
         resp.set_cookie('contcookie', 1)
-        contcookie = 1
-    if cont1 > contcookie:
-        resp = render(request, 'tarefa1/somatorio.html', {'inicio':inicio, "fim":fim, "somatorio":somatorio, "contsessao":cont1, "contserver":cont1})    
-    else:
-        resp = render(request, 'tarefa1/somatorio.html', {'inicio':inicio, "fim":fim, "somatorio":somatorio, "contsessao":cont1, "contserver":contcookie})
+
 
     return resp
