@@ -1,0 +1,1 @@
+LEMBRETE_KEY = 'lembretes'

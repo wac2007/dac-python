@@ -1,0 +1,16 @@
+{% extends 'tarefa1/base.html' %}
+
+{% block title %}Lembretes{% endblock title %}
+
+{% block content %}
+    <h1 class="text-center">Usuário</h1>
+
+    <form action="/lembretes/" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="usuario">Usuario</label>
+            <input class="form-control" name="usuario" placeholder="Nome do Usuário"/>
+        </div>
+        <button class="btn btn-primary">Adicionar Lembrete</button>
+    </form>
+{% endblock content %}

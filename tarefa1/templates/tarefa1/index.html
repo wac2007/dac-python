@@ -1,1 +1,17 @@
-<a href="/tarefa1/olamundo"> Exercicio 1</a>
+{% extends 'tarefa1/base.html' %}
+
+{% block title %}Tarefa 1{% endblock title %}
+
+{% block content %}
+    <h1 class="text-center">Exercícios</h1>
+
+    <ul>
+        <li>
+            <a href="/olamundo"> Exercicio 1</a>
+        </li>
+        <li>
+            <a href="/lembretes"> Exercicio 4</a>
+        </li>
+    </ul>
+
+{% endblock content %}

@@ -1,0 +1,42 @@
+{% extends 'tarefa1/base.html' %}
+
+{% block title %}Lembretes{% endblock title %}
+
+{% block content %}
+    <h1 class="text-center">Lembretes</h1>
+
+    <div class="card-container">
+        {% for lembrete in lembretes %}
+            <div class="card">
+              <div class="card-body">
+                {{ lembrete }}
+              </div>
+            </div>
+        {% empty %}
+            <div class="alert alert-primary" role="alert">
+              Nenhum lembrete adicionado
+            </div>
+        {% endfor %}
+    </div>
+
+    <form action="/lembretes/guarda-lembrete" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="lembrete">Novo Lembrete</label>
+            <textarea class="form-control" name="lembrete" placeholder="Adicione um lembrete aqui" rows="3"></textarea>
+        </div>
+        <input name="username" type="hidden" value="{{ username }}">
+        <button class="btn btn-primary">Adicionar Lembrete</button>
+    </form>
+
+<style>
+    .card-container {
+        margin: 2rem 0;
+    }
+    .card {
+        width: 30%;
+        display: inline-block;
+        margin: 0 1.5% 2rem;
+    }
+</style>
+{% endblock content %}
