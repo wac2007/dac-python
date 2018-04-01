@@ -1,3 +1,4 @@
+import re
 from django.shortcuts import render, redirect
 from .forms import NameForm
 from tarefa1.lembretes import get_user_lembretes, save_user_lembrete
@@ -18,6 +19,19 @@ def olamundo(request):
         form = NameForm()
     return render(request, 'tarefa1/olamundo.html', {'form': form, 'retorno': retorno})
 
+def mostraheader(request):
+    regex_http_          = re.compile(r'^HTTP_.+$')
+    regex_content_type   = re.compile(r'^CONTENT_TYPE$')
+    regex_content_length = re.compile(r'^CONTENT_LENGTH$')
+    request_headers = {}
+    chave = str(request.GET.get('chave'))
+
+    for header in request.META:
+        if regex_http_.match(header) or regex_content_type.match(header) or regex_content_length.match(header):
+            request_headers[header] = request.META[header]
+    especifico= request.META[chave]
+    return render(request, 'tarefa1/mostraheader.html', {'request_headers':request_headers, 'especifico':especifico})
+
 
 def guarda_lembrete(request):
     if request.method != 'POST':
@@ -30,6 +44,7 @@ def guarda_lembrete(request):
         messages.error(request, 'Ocorreu um erro ao salvar as mensagens')
     #volta para pagina anterior 
     return redirect(request.META.get('HTTP_REFERER'))
+
 
 def lembretes(request, username=None):
     if request.method == 'POST':

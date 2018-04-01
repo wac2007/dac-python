@@ -9,5 +9,5 @@ urlpatterns = [
     url(r'^lembretes/$', views.lembretes, name='lembretes'),
     url(r'^lembretes/(?P<username>[\w-]+)/$', views.lembretes, name='lembretes'),
     url(r'^somatorio/$', views.somatorio, name='somatorio'),
-
+    url(r'^mostraheader/$', views.mostraheader, name='mostraheader'),
 ]
