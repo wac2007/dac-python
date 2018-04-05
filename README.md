@@ -2,7 +2,7 @@
 
 ## Trabalho 1
 
-As tarefas est?o descritas no pdf [tarefas.pdf](/tarefas.pdf)
+As tarefas estão descritas no pdf [tarefas.pdf](/tarefas.pdf)
 
 ### Grupo
 
@@ -12,7 +12,7 @@ As tarefas est?o descritas no pdf [tarefas.pdf](/tarefas.pdf)
 - Ricardo José
 - Wallace Coelho
 
-### Instru??es para teste em virtual env
+### Instruções para teste em virtual env
 
 Primeiro crie um virtualenv na pasta raiz do projeto (console)
 
