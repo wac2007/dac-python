@@ -1,4 +1,4 @@
-# Desenvolvimento de Aplica??es Corporativas
+# Desenvolvimento de Aplicações Corporativas
 
 ## Trabalho 1
 
@@ -9,7 +9,7 @@ As tarefas est?o descritas no pdf [tarefas.pdf](/tarefas.pdf)
 - Beatriz Lopes
 - Caio Silva
 - Daniel Chactoura
-- Ricardo Jos?
+- Ricardo José
 - Wallace Coelho
 
 ### Instru??es para teste em virtual env
@@ -26,7 +26,7 @@ Ative o virtual env (windows)
 venv\Scripts\activate.bat
 ```
 
-Instale as depend?ncias
+Instale as dependências
 ```
 pip install -r requirements.txt
 ```
